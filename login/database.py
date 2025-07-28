@@ -8,7 +8,7 @@ from psycopg2.extras import RealDictCursor
 
 
 
-SQLALCHEMY_DATABASE_URL = f'postgresql://postgres:Eshar#4787@Localhost:5432/postgres'
+SQLALCHEMY_DATABASE_URL = f'postgresql://postgres:****@Localhost:5432/postgres'
 # SQLALCHEMY_DATABASE_URL = f'postgresql://{database_username}:{database_password}@{database_hostname}:{database_port}/{database_name}'
 
 
@@ -26,12 +26,13 @@ def get_db():
 Base = declarative_base()
 
 try:
-    connec = psycopg2.connect(host='Localhost',database='postgres',user='postgres',password='Eshar#4787',cursor_factory= RealDictCursor)
+    connec = psycopg2.connect(host='Localhost',database='postgres',user='postgres',password='******',cursor_factory= RealDictCursor)
     cursor = connec.cursor()
     print("Database connection was succesfull!")
     # break
 except Exception as error:
     print("Connecting to database failed")
     print("Error: ", error)
+
 
 
